@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <link rel="icon" href="img/favicon.png" type="image/png" />
+        <title>PreparationHut - Classroom Courses</title>
+        <!-- Bootstrap CSS -->
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/flaticon.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}" />
+        <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.carousel.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'vendors/nice-select/css/nice-select.css' %}" />
+        <!-- main css -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    </head>
+    <body>
+        <!--================ Start Header Menu Area =================-->
+        <header class="header_area white-header">
+            <div class="main_menu">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <a class="navbar-brand logo_h" href="/"
+                            ><img src={% static 'img/logo2.png' %} alt=""
+                        /></a>
+                        <button
+                            class="navbar-toggler"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation"
+                        >
+                            <span class="icon-bar"></span> <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                            <ul class="nav navbar-nav menu_nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/about/">About</a>
+                                </li>
+                                <li class="nav-item submenu dropdown active">
+                                    <a
+                                        href="#"
+                                        class="nav-link dropdown-toggle"
+                                        data-toggle="dropdown"
+                                        role="button"
+                                        aria-haspopup="true"
+                                        aria-expanded="false"
+                                        >Courses</a
+                                    >
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a
+                                                class="nav-link"
+                                                href="./../../courses/classroomcourses/"
+                                                >Classroom Training</a
+                                            >
+                                        </li>
+                                        <li class="nav-item">
+                                            <a
+                                                class="nav-link"
+                                                href="./../../courses/liveonlinecourses/"
+                                                >Live Online Training</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/contacts/">Contact</a>
+                                </li>
+                                <li class="nav-item submenu dropdown">
+                                    <a
+                                        href="#"
+                                        class="nav-link dropdown-toggle"
+                                        data-toggle="dropdown"
+                                        role="button"
+                                        aria-haspopup="true"
+                                        aria-expanded="false"
+                                        >Account</a
+                                    >
+                                    {% if user.is_authenticated %}
+                                        <ul class="dropdown-menu">                                        
+                                            <li class="nav-item">
+                                                    <a class="nav-link" href="./../../account/dashboard/">Dashboard</a>
+                                                </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="./../../account/logout/">Logout</a>
+                                            </li>
+                                        </ul>
+                                    {% else %}
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="./../../account/login/"
+                                                >Login</a
+                                            >
+                                        </li>                                        
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="./../../account/signup/">Sign Up</a>
+                                        </li>
+                                    </ul>
+                                    {% endif %}
+                                </li> 
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!--================ End Header Menu Area =================-->
+
+        <!--================Home Banner Area =================-->
+        <section class="banner_area">
+            <div class="banner_inner d-flex align-items-center">
+                <div class="overlay"></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+                            <div class="banner_content text-center">
+                                <h2>Classroom Courses</h2>
+                                <div class="page_link">
+                                    <a href="/">Home</a>
+                                    <a href="./../../courses/classroomcourses/">Classroom Courses</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Home Banner Area =================-->
+        <br>
+        <div class="container">
+            {% for category, courses in category_dict.items %}
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                      <div class="card-header" id="heading{{forloop.counter}}">
+                            <div class="typography">
+                                <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#collapse{{forloop.counter}}" aria-expanded="true" aria-controls="collapse{{forloop.counter}}">
+                                    <h2 class="typo-list">
+                                        {{category}}
+                                    </h2>
+                                </button>
+                            </div>
+                      </div>
+                      {% if forloop.first %}
+                      <div id="collapse{{forloop.counter}}" class="collapse show" aria-labelledby="heading{{forloop.counter}}" data-parent="#accordionExample">
+                      {% else %}
+                      <div id="collapse{{forloop.counter}}" class="collapse" aria-labelledby="heading{{forloop.counter}}" data-parent="#accordionExample">
+                            {% endif %}
+                        <div class="card-body">
+                                {% for course in courses %}
+                                <div class="container">    
+                                    <article class="row blog_item">
+                                            <div class="col-md-3">
+                                                <div class="blog_info text-right">
+                                                    <div class="post_tag">
+                                                        <a class="active" href="#">{{course.category}}</a>
+                                                    </div>
+                                                    <ul class="blog_meta list">
+                                                        <li><a href="#">{{course.instructor}}<i class="ti-user"></i></a></li>
+                                                        <li><a href="#"><i class="price">${{course.price}}</i></a></li>
+                                                        <!-- <li><a href="#">1.2M Views<i class="ti-eye"></i></a></li>
+                                                        <li><a href="#">06 Comments<i class="ti-comment"></i></a></li> -->
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="blog_post">
+                                                    <div class="">
+                                                        {{course.image | safe}}
+                                                    </div>
+                                                    <div class="blog_details">
+                                                        <h2>{{course.title}}</h2>
+                                                        <p>{{course.description | safe | slice:":300"}} ...</p>
+                                                        <form action="" method="post">
+                                                            {% csrf_token %}
+                                                            <input type="hidden" name="classroomcourse_id" value="{{course.id}}">
+                                                            <input type="submit" class="blog_btn" name="classroomcourse_submit" value="View More">
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>                
+                                </div>
+                            {% endfor %}
+                            <br>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <br>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+        <script src="{% static 'js/popper.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'vendors/nice-select/js/jquery.nice-select.min.js' %}"></script>
+        <script src="{% static 'vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/owl-carousel-thumb.min.js' %}"></script>
+        <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+        <script src="{% static 'js/mail-script.js' %}"></script>
+        <!--gmaps Js-->
+        <script src=https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+        <script src="{% static 'js/gmaps.min.js' %}"></script>
+        <script src="{% static 'js/theme.js' %}"></script>
+    </body>
+</html>

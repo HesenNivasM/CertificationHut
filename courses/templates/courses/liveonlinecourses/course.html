@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <link rel="icon" href="img/favicon.png" type="image/png" />
+        <title>PreparationHut - Live Online Training</title>
+        <!-- Bootstrap CSS -->
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/flaticon.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}" />
+        <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.carousel.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'vendors/nice-select/css/nice-select.css' %}" />
+        <!-- main css -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    </head>
+    <body>
+        <!--================ Start Header Menu Area =================-->
+        <header class="header_area white-header">
+            <div class="main_menu">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <a class="navbar-brand logo_h" href="/"
+                            ><img src={% static 'img/logo2.png' %} alt=""
+                        /></a>
+                        <button
+                            class="navbar-toggler"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation"
+                        >
+                            <span class="icon-bar"></span> <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                            <ul class="nav navbar-nav menu_nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/about/">About</a>
+                                </li>
+                                <li class="nav-item submenu dropdown active">
+                                    <a
+                                        href="#"
+                                        class="nav-link dropdown-toggle"
+                                        data-toggle="dropdown"
+                                        role="button"
+                                        aria-haspopup="true"
+                                        aria-expanded="false"
+                                        >Courses</a
+                                    >
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a
+                                                class="nav-link"
+                                                href="./../../courses/classroomcourses/"
+                                                >Classroom Training</a
+                                            >
+                                        </li>
+                                        <li class="nav-item">
+                                            <a
+                                                class="nav-link"
+                                                href="./../../courses/liveonlinecourses/"
+                                                >Live Online Training</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/contacts/">Contact</a>
+                                </li>
+                                <li class="nav-item submenu dropdown">
+                                    <a
+                                        href="#"
+                                        class="nav-link dropdown-toggle"
+                                        data-toggle="dropdown"
+                                        role="button"
+                                        aria-haspopup="true"
+                                        aria-expanded="false"
+                                        >Account</a
+                                    >
+                                    {% if user.is_authenticated %}
+                                        <ul class="dropdown-menu">                                        
+                                            <li class="nav-item">
+                                                    <a class="nav-link" href="./../../account/dashboard/">Dashboard</a>
+                                                </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="./../../account/logout/">Logout</a>
+                                            </li>
+                                        </ul>
+                                    {% else %}
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="./../../account/login/"
+                                                >Login</a
+                                            >
+                                        </li>                                        
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="./../../account/signup/">Sign Up</a>
+                                        </li>
+                                    </ul>
+                                    {% endif %}
+                                </li> 
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!--================ End Header Menu Area =================-->
+
+        <!--================Home Banner Area =================-->
+        <section class="banner_area">
+            <div class="banner_inner d-flex align-items-center">
+                <div class="overlay"></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+                            <div class="banner_content text-center">
+                                <h2>{{course.title}}</h2>
+                                <div class="page_link">
+                                    <a href="/">Home</a>
+                                    <a href="./../../courses/liveonlinecourses/">Live Online Courses</a>
+                                    <a href="">{{course.category}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Home Banner Area =================-->
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 text-center">
+                    <div class="generic-blockquote">
+                        Instructor : <strong>{{course.instructor}}</strong>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center">                
+                    <div class="generic-blockquote">
+                        Category : <strong>{{course.category}}</strong>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center">                
+                    <div class="generic-blockquote">
+                        Price : <strong class="price">${{course.price}}</strong>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center">    
+                    <br>            
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="course_number" value="{{course.id}}">
+                        <input class="btn btn-lg" style="background-color: #fdc632;" name="submit_enroll_form" type="submit" value="Enroll">
+                    </form>
+                </div>
+            </div>
+            <br>
+            <!-- <img style=" height: 50%;width: 100%;" src="{{image_path}}" alt="">-->
+            <br>
+            <div class="row">
+                <div class="col-lg-9">
+                    <h2 class="mb-20 title_color">
+                        Description:
+                    </h2>
+                    <div class="ml-5">
+                        {{course.description | safe}}
+                    </div>
+                    <br>
+                    <h2 class="mb-20 title_color">
+                        Curriculum:
+                    </h2>
+                    <div class="ml-5">
+                        {{course.curriculum | safe}}
+                    </div>
+                    <br>
+                </div>
+                <div class="col-lg-3">
+                    <h2 class="mb-20 title_color">
+                        Course Features:
+                    </h2>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td scope="row">Lectures</td>
+                                <td>{{course.lectures}}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Quizzes</td>
+                                <td>{{course.no_of_quizzes}}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Duration</td>
+                                <td>{{course.duration}} Hours</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Skill Level</td>
+                                <td>{{course.no_of_quizzes}}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Language</td>
+                                <td>{{course.language}}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Students</td>
+                                <td>{{course.no_of_students}}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Certification</td>
+                                <td>{{course.certificate_type}}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Assessment</td>
+                                <td>{{course.asssessment_type}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+        <script src="{% static 'js/popper.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'vendors/nice-select/js/jquery.nice-select.min.js' %}"></script>
+        <script src="{% static 'vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/owl-carousel-thumb.min.js' %}"></script>
+        <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+        <script src="{% static 'js/mail-script.js' %}"></script>
+        <!--gmaps Js-->
+        <script src=https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+        <script src="{% static 'js/gmaps.min.js' %}"></script>
+        <script src="{% static 'js/theme.js' %}"></script>
+    </body>
+</html>
