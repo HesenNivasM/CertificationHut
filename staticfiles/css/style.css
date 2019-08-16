@@ -12,7 +12,9 @@ body {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  color: #7b838a; }
+  color: orange; 
+  background-color: black;
+}
 
 h1,
 h2,
@@ -22,7 +24,7 @@ h5,
 h6 {
   font-family: "Rubik", sans-serif;
   font-weight: 500;
-  color: #002347; }
+  color: white; }
 
 .list {
   list-style: none;
@@ -71,7 +73,7 @@ button:focus {
       margin-top: 0px; } }
 
 .title-bg {
-  background: #002347; }
+  background: #ffffff; }
 
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
@@ -144,7 +146,7 @@ button:focus {
   z-index: 99;
   transition: background 0.4s, all 0.3s linear; }
   .header_area .navbar {
-    background: transparent;
+    background: black;
     padding: 0px;
     border: 0px;
     border-radius: 0px; }
@@ -153,7 +155,7 @@ button:focus {
       .header_area .navbar .nav .nav-item .nav-link {
         font: 500 14px/80px "Rubik", sans-serif;
         text-transform: capitalize;
-        color: #002347;
+        color: #ffffff;
         padding: 0px;
         display: inline-block; }
         @media (max-width: 991px) {
@@ -171,7 +173,7 @@ button:focus {
           border-radius: 0px;
           box-shadow: none;
           margin: 0px;
-          background: #fff; }
+          background: black; }
           @media (min-width: 992px) {
             .header_area .navbar .nav .nav-item.submenu ul {
               position: absolute;
@@ -208,7 +210,7 @@ button:focus {
             transition: all 0.4s linear; }
             .header_area .navbar .nav .nav-item.submenu ul .nav-item .nav-link {
               line-height: 45px;
-              color: #002347;
+              color: #ffffff;
               padding: 0px 30px;
               transition: all 150ms linear;
               display: block;
@@ -231,7 +233,7 @@ button:focus {
       font-size: 12px;
       line-height: 60px;
       display: inline-block;
-      color: #002347; }
+      color: #ffffff; }
       .header_area .navbar .search i {
         font-weight: 600; }
   .header_area.white-header .navbar .nav .nav-item.active .nav-link, .header_area.white-header .navbar .nav .nav-item:hover .nav-link {
@@ -258,9 +260,9 @@ button:focus {
     .header_area.navbar_fixed .main_menu .navbar .nav .nav-item .nav-link {
       line-height: 70px; }
     .header_area.navbar_fixed .main_menu .navbar .nav .nav-item.submenu ul .nav-item .nav-link {
-      color: #002347; }
+      color: #ffffff; }
   .header_area.white-header.navbar_fixed .main_menu {
-    background: #002347; }
+    background: #ffffff; }
     .header_area.white-header.navbar_fixed .main_menu .navbar .nav .nav-item.active .nav-link, .header_area.white-header.navbar_fixed .main_menu .navbar .nav .nav-item:hover .nav-link {
       color: #fdc632; }
 
@@ -333,7 +335,7 @@ button:focus {
       font-weight: 500; }
     .home_banner_area .banner_inner .banner_content p {
       font-size: 20px;
-      color: #002347;
+      color: #ffffff;
       font-weight: 500; }
 
 .blog_banner {
@@ -458,7 +460,7 @@ button:focus {
         .h_blog_item .h_blog_text .h_blog_text_inner.right {
           margin-left: 0px; } }
     .h_blog_item .h_blog_text .h_blog_text_inner h4 {
-      color: #002347;
+      color: #ffffff;
       font-size: 30px;
       margin-bottom: 15px; }
     .h_blog_item .h_blog_text .h_blog_text_inner p {
@@ -469,14 +471,14 @@ button:focus {
 /* Start Features Area css
 ============================================================================================ */
 .feature_area {
-  padding-bottom: 100px; }
+  }
   @media (max-width: 991px) {
     .feature_area {
       padding-bottom: 40px; } }
 
 .single_feature {
   position: relative;
-  background: #f9f9ff;
+  background: #ffffff;
   padding: 40px 36px;
   margin-bottom: 30px;
   -webkit-transition: all 0.3s ease 0s;
@@ -489,6 +491,7 @@ button:focus {
   .single_feature .icon span {
     font-size: 30px; }
   .single_feature h4 {
+    color: #1F2833;
     font-size: 20px;
     font-weight: 500; }
   .single_feature p {
@@ -563,7 +566,7 @@ button:focus {
     top: -34px;
     right: 15px;
     z-index: 2;
-    color: #002347;
+    color: #ffffff;
     display: inline-block;
     height: 65px;
     line-height: 65px;
@@ -586,7 +589,7 @@ button:focus {
       transition: all 0.3s ease 0s; }
   .single_course .course_content {
     padding: 30px 26px;
-    background: #f9f9ff;
+    background: #1F2833;
     position: relative;
     -webkit-transition: all 0.3s ease 0s;
     -moz-transition: all 0.3s ease 0s;
@@ -596,24 +599,23 @@ button:focus {
       padding: 2px 21px;
       font-size: 13px;
       color: #fff;
-      background: #002347;
       text-transform: uppercase; }
     .single_course .course_content h4 {
       font-size: 20px;
       font-weight: 500; }
       .single_course .course_content h4 a {
-        color: #002347; }
+        color: #ffffff; }
     .single_course .course_content p {
       margin: 0; }
     .single_course .course_content .course_meta {
       margin-top: 25px; }
       .single_course .course_content .course_meta .meta_info a {
-        color: #002347; }
+        color: #ffffff; }
   .single_course .authr_meta img {
     width: auto !important;
     display: inline-block !important; }
   .single_course .authr_meta span {
-    color: #002347;
+    color: #ffffff;
     font-weight: 500; }
   .single_course:hover {
     box-shadow: 0px 10px 30px rgba(0, 35, 71, 0.1); }
@@ -624,9 +626,9 @@ button:focus {
       -o-transform: scale(1.2);
       transform: scale(1.2); }
     .single_course:hover .course_content {
-      background: #fff; }
+      background: #1F2833; }
     .single_course:hover .price {
-      background: #002347;
+      background: #ffffff;
       color: #fdc632; }
     .single_course:hover h4 a {
       color: #fdc632; }
@@ -694,7 +696,7 @@ button:focus {
       .right-contents ul li a p {
         margin-bottom: 0px; }
     .right-contents ul li .or {
-      color: #002347;
+      color: #ffffff;
       font-weight: 500; }
 .right-contents .enroll {
   margin-top: 10px;
@@ -751,7 +753,7 @@ button:focus {
 /* Start Registration Area css
 ============================================================================================ */
 .registration_area {
-  background: #002347; }
+  background: #ffffff; }
 
 .clock_sec {
   color: #fff; }
@@ -854,14 +856,13 @@ button:focus {
   .single-trainer .thumb {
     position: relative; }
   .single-trainer .meta-text {
-    background: #f9f9ff;
     padding: 20px 25px;
     box-shadow: 0px 0px 30px rgba(153, 153, 153, 0.13);
     -webkit-transition: all 0.3s ease 0s;
     -moz-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
-    background: #ffffff; }
+    background: #1F2833; }
     @media (max-width: 991px) {
       .single-trainer .meta-text {
         padding: 20px 20px; } }
@@ -889,8 +890,7 @@ button:focus {
 /* Start Event Area css
 ============================================================================================ */
 .events_area {
-  padding: 130px 0 100px;
-  background: #002347; }
+  background: black; }
   @media (max-width: 991px) {
     .events_area {
       padding: 70px 0; } }
@@ -1040,7 +1040,7 @@ button:focus {
   display: inline-block;
   padding: 1px 18px;
   text-align: center;
-  color: #002347; }
+  color: #ffffff; }
   .tags .tag_btn:before {
     background: #fdc632; }
   .tags .tag_btn + .tag_btn {
@@ -1101,7 +1101,7 @@ button:focus {
     padding-bottom: 20px; }
     .blog_info .post_tag a {
       font: 300 14px/21px "Roboto", sans-serif;
-      color: #002347; }
+      color: #ffffff; }
       .blog_info .post_tag a:hover {
         color: #7b838a; }
       .blog_info .post_tag a.active {
@@ -1113,7 +1113,7 @@ button:focus {
     padding-bottom: 12px;
     display: inline-block; }
     .blog_info .blog_meta li a i {
-      color: #002347;
+      color: #ffffff;
       font-size: 16px;
       font-weight: 600;
       padding-left: 15px;
@@ -1130,7 +1130,7 @@ button:focus {
   .blog_details h2 {
     font-size: 24px;
     line-height: 36px;
-    color: #002347;
+    color: #ffffff;
     font-weight: 600;
     -webkit-transition: all 0.3s linear;
     -moz-transition: all 0.3s linear;
@@ -1145,7 +1145,7 @@ button:focus {
   font-size: 14px;
   line-height: 36px;
   display: inline-block;
-  color: #002347;
+  color: #ffffff;
   font-weight: 500;
   padding: 0px 30px;
   background: #fff; }
@@ -1159,7 +1159,7 @@ button:focus {
   .blog_right_sidebar .widget_title {
     font-size: 18px;
     line-height: 25px;
-    background: #002347;
+    background: #ffffff;
     text-align: center;
     color: #fff;
     padding: 8px 0px;
@@ -1174,7 +1174,7 @@ button:focus {
     padding-left: 20px;
     border-radius: 45px;
     z-index: 0;
-    background: #002347; }
+    background: #ffffff; }
     .blog_right_sidebar .search_widget .input-group .form-control.placeholder {
       color: #fff; }
     .blog_right_sidebar .search_widget .input-group .form-control:-moz-placeholder {
@@ -1202,7 +1202,7 @@ button:focus {
     .blog_right_sidebar .author_widget h4 {
       font-size: 18px;
       line-height: 20px;
-      color: #002347;
+      color: #ffffff;
       margin-bottom: 5px;
       margin-top: 30px; }
     .blog_right_sidebar .author_widget p {
@@ -1211,7 +1211,7 @@ button:focus {
       padding: 7px 0px 15px; }
       .blog_right_sidebar .author_widget .social_icon a {
         font-size: 14px;
-        color: #002347;
+        color: #ffffff;
         transition: all 0.2s linear; }
         .blog_right_sidebar .author_widget .social_icon a + a {
           margin-left: 20px; }
@@ -1224,7 +1224,7 @@ button:focus {
     .blog_right_sidebar .popular_post_widget .post_item .media-body h3 {
       font-size: 14px;
       line-height: 20px;
-      color: #002347;
+      color: #ffffff;
       margin-bottom: 4px;
       transition: all 0.3s linear; }
       .blog_right_sidebar .popular_post_widget .post_item .media-body h3:hover {
@@ -1304,7 +1304,7 @@ button:focus {
       padding: 0px 13px;
       margin-bottom: 8px;
       transition: all 0.3s ease 0s;
-      color: #002347;
+      color: #ffffff;
       font-size: 12px; }
       .blog_right_sidebar .tag_cloud_widget ul li a:hover {
         background: #fdc632;
@@ -1368,7 +1368,7 @@ button:focus {
       font-size: 14px;
       transition: all 0.2s linear; }
       .single-post-area .social-links li a:hover {
-        color: #002347; }
+        color: #ffffff; }
 .single-post-area .blog_details {
   padding-top: 26px; }
   .single-post-area .blog_details p {
@@ -1398,7 +1398,7 @@ button:focus {
   .single-post-area .navigation-area h4 {
     font-size: 18px;
     line-height: 25px;
-    color: #002347; }
+    color: #ffffff; }
   .single-post-area .navigation-area .nav-left {
     text-align: left; }
     .single-post-area .navigation-area .nav-left .thumb {
@@ -1458,13 +1458,13 @@ button:focus {
   .comments-area h4 {
     text-align: center;
     margin-bottom: 50px;
-    color: #002347;
+    color: #ffffff;
     font-size: 18px; }
   .comments-area h5 {
     font-size: 16px;
     margin-bottom: 0px; }
   .comments-area a {
-    color: #002347; }
+    color: #ffffff; }
   .comments-area .comment-list {
     padding-bottom: 48px; }
     .comments-area .comment-list:last-child {
@@ -1489,7 +1489,7 @@ button:focus {
     margin-bottom: 0px; }
   .comments-area .btn-reply {
     background-color: #fff;
-    color: #002347;
+    color: #ffffff;
     border: 1px solid #eee;
     padding: 2px 18px;
     font-size: 12px;
@@ -1501,7 +1501,7 @@ button:focus {
     transition: all 0.3s ease 0s; }
     .comments-area .btn-reply:hover {
       background: #fdc632;
-      color: #002347; }
+      color: #ffffff; }
 
 .comment-form {
   background: #f1f9ff;
@@ -1514,7 +1514,7 @@ button:focus {
     margin-bottom: 50px;
     font-size: 18px;
     line-height: 22px;
-    color: #002347; }
+    color: #ffffff; }
   .comment-form .name {
     padding-left: 0px; }
     @media (max-width: 767px) {
@@ -1575,7 +1575,7 @@ button:focus {
     top: 0;
     font-size: 20px;
     line-height: 24px;
-    color: #002347;
+    color: #ffffff;
     font-weight: 600; }
   .contact_info .info_item h6 {
     font-size: 16px;
@@ -1583,9 +1583,9 @@ button:focus {
     color: "Roboto", sans-serif;
     font-weight: bold;
     margin-bottom: 0px;
-    color: #002347; }
+    color: #ffffff; }
     .contact_info .info_item h6 a {
-      color: #002347; }
+      color: #ffffff; }
   .contact_info .info_item p {
     font-size: 14px;
     line-height: 24px;
@@ -1604,16 +1604,16 @@ button:focus {
       box-shadow: none;
       outline: none; }
     .contact_form .form-group .form-control.placeholder {
-      color: #002347;
+      color: #ffffff;
       font-size: 13px; }
     .contact_form .form-group .form-control:-moz-placeholder {
-      color: #002347;
+      color: #ffffff;
       font-size: 13px; }
     .contact_form .form-group .form-control::-moz-placeholder {
-      color: #002347;
+      color: #ffffff;
       font-size: 13px; }
     .contact_form .form-group .form-control::-webkit-input-placeholder {
-      color: #002347;
+      color: #ffffff;
       font-size: 13px; }
   .contact_form .form-group textarea {
     resize: none; }
@@ -1694,10 +1694,10 @@ button:focus {
 /*==============Elements Button Area css ================*/
 .elements_button .title_color {
   margin-bottom: 30px;
-  color: #002347; }
+  color: #ffffff; }
 
 .title_color {
-  color: #002347; }
+  color: #ffffff; }
 
 .button-group-area {
   margin-top: 15px; }
@@ -1709,7 +1709,7 @@ button:focus {
     margin-right: 10px; }
   .button-group-area .link {
     text-decoration: underline;
-    color: #002347;
+    color: #ffffff;
     background: transparent; }
     .button-group-area .link:hover {
       color: #fff; }
@@ -2135,7 +2135,6 @@ h6 {
 
 .generic-blockquote {
   padding: 30px 50px 30px 30px;
-  background: #fff;
   border-left: 2px solid #f8b600; }
 
 @media (max-width: 991px) {
@@ -2573,7 +2572,7 @@ h6 {
   border: 1px solid #f1f1f1; }
 
 .single-defination h4 {
-  color: #002347; }
+  color: #ffffff; }
 
 .primary-checkbox input:checked + label {
   background: url(../img/elements/primary-check.png) no-repeat center center/cover;
@@ -2872,7 +2871,7 @@ h6 {
   display: inline-block;
   background: #fdc632;
   padding: 0px 48px;
-  color: #002347;
+  color: #ffffff;
   font-size: 13px;
   font-weight: 500;
   line-height: 50px;
@@ -2886,12 +2885,12 @@ h6 {
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s; }
   .primary-btn:hover {
-    background: #002347;
+    background: #ffffff;
     color: #fdc632; }
 
 .primary-btn2 {
   display: inline-block;
-  background: #002347;
+  background: #ffffff;
   padding: 0px 48px;
   color: #fdc632;
   font-size: 13px;
@@ -2909,13 +2908,13 @@ h6 {
   transition: all 0.3s ease 0s; }
   .primary-btn2:hover {
     background: transparent;
-    color: #002347;
-    border: 1px solid #002347; }
+    color: #ffffff;
+    border: 1px solid #ffffff; }
 
 .white_bg_btn {
   background: #fff;
   display: inline-block;
-  color: #002347;
+  color: #ffffff;
   line-height: 40px;
   padding: 0px 28px;
   font-size: 14px;
@@ -2933,18 +2932,18 @@ h6 {
 
 .blog_btn {
   border: 1px solid #eeeeee;
-  background: #f1f9ff;
+  background: black;
   padding: 0px 32px;
   font-size: 13px;
   font-weight: 600;
   font-family: "Roboto", sans-serif;
-  color: #002347;
+  color: #ffffff;
   line-height: 34px;
   display: inline-block; }
   .blog_btn:hover {
     background: #fdc632;
     border-color: #fdc632;
-    color: #002347; }
+    color: #ffffff; }
 
 /* End Main Button Area css
 ============================================================================================ */
@@ -2990,7 +2989,7 @@ h6 {
     position: absolute; }
 
   .header_area .navbar {
-    background: #868686; }
+    background: black; }
 
   .navbar-toggler[aria-expanded="false"] span:nth-child(2) {
     opacity: 1; }
@@ -3240,7 +3239,7 @@ h6 {
 /*  Footer Styles
 /* =================================== */
 .footer-area {
-  background: #002347; }
+  background: black; }
   @media (max-width: 991px) {
     .footer-area .single-footer-widget {
       margin-bottom: 30px; } }
@@ -3285,7 +3284,7 @@ h6 {
   .footer-area .single-footer-widget .click-btn {
     background: #fdc632;
     background-size: 200% auto;
-    color: #002347;
+    color: #ffffff;
     border-radius: 0;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
@@ -3331,7 +3330,7 @@ h6 {
         .footer-area .footer-bottom .footer-social a:hover {
           background: #fdc632; }
           .footer-area .footer-bottom .footer-social a:hover i {
-            color: #002347; }
+            color: #ffffff; }
       .footer-area .footer-bottom .footer-social i {
         color: #cccccc;
         -webkit-transition: all 0.3s ease 0s;
