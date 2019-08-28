@@ -74,10 +74,10 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/contact/">Contact</a>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="./">Contact</a>
                                 </li>
-                                <li class="nav-item submenu dropdown active">
+                                <li class="nav-item submenu dropdown">
                                     <a
                                         href="#"
                                         class="nav-link dropdown-toggle"
@@ -114,10 +114,10 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-6">
                             <div class="banner_content text-center">
-                                <h2>Login</h2>
+                                <h2>Contact</h2>
                                 <div class="page_link">
                                     <a href="/">Home</a>
-                                    <a href="./../../account/login/">Login</a>
+                                    <a href="./../../account/contact/">Contact</a>
                                 </div>
                             </div>
                         </div>
@@ -126,53 +126,113 @@
             </div>
         </section>
         <!--================End Home Banner Area =================-->
-        <div class="container">
-            <br>
-            <div class="row">
-                <div class="col-lg-2"></div>
-                <div class="col-lg-8">
-                    <div class="text-center">
-                        <h3>Login to Account</h3>
+
+        <!--================Contact Area =================-->
+        <section class="contact_area section_gap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <h3 class="text-center">Contact Information</h3>
                         <br>
-                        {% if invalid_login %}
-                            <div class="alert alert-danger">
-                                Invalid Login
+                        <div class="contact_info">
+                            <div class="info_item">
+                                <i class="ti-home"></i>
+                                <h6>California, United States</h6>
+                                <p>Santa monica bullevard</p>
                             </div>
-                            <br>
-                        {% endif %}
-                        <form action="" method="post">
-                            {% csrf_token %}
-                            <div class="row form-group">
-                                <div class="col-lg-4">
-                                    Username
-                                </div>
-                                <div class="col-lg-8">
-                                    <input type="text" class="form-control" name="username" id="username">                                    
-                                </div>
+                            <div class="info_item">
+                                <i class="ti-mobile"></i>
+                                <h6><a href="#">00 (440) 9865 562</a></h6>
+                                <p>Mon to Fri 9am to 6 pm</p>
                             </div>
-                            <div class="row form-group">
-                                <div class="col-lg-4">
-                                    Password
-                                </div>
-                                <div class="col-lg-8">
-                                    <input type="password" class="form-control" name="password" id="password">
-                                </div>
-                            </div>                            
-                            <div>
-                                <div class="row form-group">
-                                    <div class="col-lg-4">
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <input class="btn btn-success" type="submit" value="Login" name="login_submit">
-                                    </div>
-                                </div>
+                            <div class="info_item">
+                                <i class="ti-email"></i>
+                                <h6><a href="#">support@colorlib.com</a></h6>
+                                <p>Send us your query anytime!</p>
                             </div>
-                        </form>
+                            <div class="info_item">
+                                <i class="ti-home"></i>
+                                <h6><a href="#">No 20, Anna Nagar, Madurai</a></h6>
+                                <p>Visit anytime for query</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                    <h3 class="text-center">Send your Query Here!</h3>
+                    <br>
+                    <form
+                        class="row contact_form"
+                        action=""
+                        method="post"
+                        id="contactForm"
+                        novalidate="novalidate"
+                    >
+                        {% csrf_token %}
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Enter your name"
+                                    onfocus="this.placeholder = ''"
+                                    onblur="this.placeholder = 'Enter your name'"
+                                    required=""
+                                />
+                            </div>
+                            <div class="form-group">
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Enter email address"
+                                    onfocus="this.placeholder = ''"
+                                    onblur="this.placeholder = 'Enter email address'"
+                                    required=""
+                                />
+                            </div>
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="subject"
+                                    name="subject"
+                                    placeholder="Enter Subject"
+                                    onfocus="this.placeholder = ''"
+                                    onblur="this.placeholder = 'Enter Subject'"
+                                    required=""
+                                />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <textarea
+                                    class="form-control"
+                                    name="message"
+                                    id="message"
+                                    rows="1"
+                                    placeholder="Enter Message"
+                                    onfocus="this.placeholder = ''"
+                                    onblur="this.placeholder = 'Enter Message'"                                    
+                                    required=""
+                                    style="color: orange"
+                                ></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-right">
+                            <button type="submit" value="submit" class="btn primary-btn">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
                     </div>
                 </div>
-                <div class="col-lg-2"></div>
             </div>
-        </div>
+        </section>
+        <!--================Contact Area =================-->
+
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>

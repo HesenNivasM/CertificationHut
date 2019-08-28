@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'home',
     'courses',
     'about',
+    'contact',
     'ckeditor',
     'ckeditor_uploader',
     'django.contrib.admin',
@@ -139,3 +140,11 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media/'
+
+# Contents for Email
+# Turn on in https://myaccount.google.com/lesssecureapps/
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "@gmail.com"
+EMAIL_HOST_PASSWORD = ""

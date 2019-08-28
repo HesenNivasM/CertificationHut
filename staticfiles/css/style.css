@@ -1604,16 +1604,16 @@ button:focus {
       box-shadow: none;
       outline: none; }
     .contact_form .form-group .form-control.placeholder {
-      color: #ffffff;
+      color: #128702;
       font-size: 13px; }
     .contact_form .form-group .form-control:-moz-placeholder {
-      color: #ffffff;
+      color: #128702;
       font-size: 13px; }
     .contact_form .form-group .form-control::-moz-placeholder {
-      color: #ffffff;
+      color: #128702;
       font-size: 13px; }
     .contact_form .form-group .form-control::-webkit-input-placeholder {
-      color: #ffffff;
+      color: #128702;
       font-size: 13px; }
   .contact_form .form-group textarea {
     resize: none; }
