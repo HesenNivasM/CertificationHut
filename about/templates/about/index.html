@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <link rel="icon" href="img/favicon.ico" type="image/png" />
+        <title>CertificationHut - Classroom Courses</title>
+        <!-- Bootstrap CSS -->
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/flaticon.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}" />
+        <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.carousel.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'vendors/nice-select/css/nice-select.css' %}" />
+        <!-- main css -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    </head>
+    <body>
+        <!--================ Start Header Menu Area =================-->
+        <header class="header_area white-header">
+            <div class="main_menu">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <a class="navbar-brand logo_h" href="/"
+                            ><img src={% static 'img/logo2.png' %} alt=""
+                        /></a>
+                        <button
+                            class="navbar-toggler"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation"
+                        >
+                            <span class="icon-bar"></span> <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                            <ul class="nav navbar-nav menu_nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/">Home</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="/about/">About</a>
+                                </li>
+                                <li class="nav-item submenu dropdown">
+                                    <a
+                                        href="#"
+                                        class="nav-link dropdown-toggle"
+                                        data-toggle="dropdown"
+                                        role="button"
+                                        aria-haspopup="true"
+                                        aria-expanded="false"
+                                        >Courses</a
+                                    >
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a
+                                                class="nav-link"
+                                                href="./../../courses/classroomcourses/"
+                                                >Classroom Training</a
+                                            >
+                                        </li>
+                                        <li class="nav-item">
+                                            <a
+                                                class="nav-link"
+                                                href="./../../courses/liveonlinecourses/"
+                                                >Live Online Training</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/contacts/">Contact</a>
+                                </li>
+                                <li class="nav-item submenu dropdown">
+                                    <a
+                                        href="#"
+                                        class="nav-link dropdown-toggle"
+                                        data-toggle="dropdown"
+                                        role="button"
+                                        aria-haspopup="true"
+                                        aria-expanded="false"
+                                        >Account</a
+                                    >
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="./../../account/login/"
+                                                >Login</a
+                                            >
+                                        </li>                                        
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="./../../account/signup/">Sign Up</a>
+                                        </li>
+                                    </ul>
+                                </li> 
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!--================ End Header Menu Area =================-->
+
+        <!--================Home Banner Area =================-->
+        <section class="banner_area">
+            <div class="banner_inner d-flex align-items-center">
+                <div class="overlay"></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+                            <div class="banner_content text-center">
+                                <h2>About Us</h2>
+                                <div class="page_link">
+                                    <a href="/">Home</a>
+                                    <a href="./../../account/about/">About-Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Home Banner Area =================-->
+        
+        <!--================ Start About Area =================-->
+            <section class="about_area section_gap">
+                <div class="container">
+                    <div class="row h_blog_item">
+                    <div class="text-center col-lg-6 mb-4">
+                        <h1>Certification Hut</h1>
+                        <a href="./../contact/">Contact us</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="h_blog_text">
+                        <div class="h_blog_text_inner left right" style="background-color: #1f2833;">
+                            <h4>Welcome to our Institute</h4>
+                            <p style="font-weight: bold;">
+                                Certification Hut is one of the top leading certification and training providing in multiple countries with several of the domain. Certification Hut provide certification in the field of all the domain like... Project, Quality, IT, Finance, Marketing and many more. We deliver quality training in online mode, Instructor-led Live Virtual online Session and also in Face to Face classroom Training to Individual and corporate both. Being a partner to some of the top certification bodies like PMI (Project management Institute), the organization aims at facilitating quality training’s to professionals worldwide.
+                            </p>                    
+                            <p style="font-weight: bold;">
+                                We have helped over 15000+ professionals across countries get trained, acquire certifications and up-skill their employees. Our training courses are prepared and updated by more than 1000+ industries experts. Our blended learning approach combines online self-study package, instructor-led live virtual classroom and In-Person face to face classroom-based training.
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </section>
+        <!--================ End About Area =================-->
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+        <script src="{% static 'js/popper.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'vendors/nice-select/js/jquery.nice-select.min.js' %}"></script>
+        <script src="{% static 'vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/owl-carousel-thumb.min.js' %}"></script>
+        <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+        <script src="{% static 'js/mail-script.js' %}"></script>
+        <!--gmaps Js-->
+        <script src=https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+        <script src="{% static 'js/gmaps.min.js' %}"></script>
+        <script src="{% static 'js/theme.js' %}"></script>
+    </body>
+</html>

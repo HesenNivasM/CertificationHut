@@ -31,9 +31,10 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
-    'account'
-,    'home',
+    'account',
+    'home',
     'courses',
+    'about',
     'ckeditor',
     'ckeditor_uploader',
     'django.contrib.admin',
