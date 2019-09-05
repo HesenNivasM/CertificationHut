@@ -139,67 +139,117 @@
         <!--================End Home Banner Area =================-->
         <br>
         <div class="container">
-            {% for category, courses in category_dict.items %}
+            {% for continent, country_list in continents_dict.items %}
                 <div class="accordion" id="accordionExample">
                     <div class="card">
-                      <div class="card-header" id="heading{{forloop.counter}}">
+                        <div class="card-header" id="heading{{forloop.counter}}">
                             <div class="typography">
-                                <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#collapse{{forloop.counter}}" aria-expanded="true" aria-controls="collapse{{forloop.counter}}">
-                                    <h2 class="typo-list">
-                                        {{category}}
-                                    </h2>
-                                </button>
+                                <h2 class="text-center typo-list">
+                                    {{continent}}
+                                </h2>
+                                <br>
                             </div>
-                      </div>
-                      {% if forloop.first %}
-                      <div id="collapse{{forloop.counter}}" class="collapse show" aria-labelledby="heading{{forloop.counter}}" data-parent="#accordionExample">
-                      {% else %}
-                      <div id="collapse{{forloop.counter}}" class="collapse" aria-labelledby="heading{{forloop.counter}}" data-parent="#accordionExample">
-                            {% endif %}
-                        <div class="card-body">
-                                {% for course in courses %}
-                                <div class="container">    
-                                    <article class="row blog_item">
-                                            <div class="col-md-3">
-                                                <div class="blog_info text-right">
-                                                    <div class="post_tag">
-                                                        <a class="active" href="#">{{course.category}}</a>
-                                                    </div>
-                                                    <ul class="blog_meta list">
-                                                        <li><a href="#">{{course.instructor}}<i class="ti-user"></i></a></li>
-                                                        <li><a href="#"><i class="price">${{course.price}}</i></a></li>
-                                                        <!-- <li><a href="#">1.2M Views<i class="ti-eye"></i></a></li>
-                                                        <li><a href="#">06 Comments<i class="ti-comment"></i></a></li> -->
-                                                    </ul>
+                            <div class="container m-2">
+                                {% for country_dict in country_list %}
+                                    {% for country, courses_list in country_dict.items %}
+                                        <div class="m-3">
+                                            <h2 class="text-center">{{country}}</h2>
+                                            <br>
+                                            {% for course in courses_list %}
+                                                <div class="mt-2">
+                                                    <h3>{{course}}</h3>
+                                                    <article class="row blog_item">
+                                                        <div class="col-md-3">
+                                                            <div class="blog_info text-right">
+                                                                <div class="post_tag">
+                                                                    <a class="active" href="#">{{course.category}}</a>
+                                                                </div>
+                                                                <ul class="blog_meta list">
+                                                                    <li><a href="#">{{course.instructor}}<i class="ti-user"></i></a></li>
+                                                                    <li><a href="#"><i class="price">${{course.price}}</i></a></li>
+                                                                        <li><a href="#">1.2M Views<i class="ti-eye"></i></a></li>
+                                                                    <li><a href="#">06 Comments<i class="ti-comment"></i></a></li> 
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <div class="blog_post">
+                                                                <div class="">
+                                                                    {{course.image | safe}}
+                                                                </div>
+                                                                <div class="blog_details pt-0">
+                                                                    <!-- <h2>{{course.title}}</h2> -->
+                                                                    <p>{{course.description | safe | slice:":300"}} ...</p>
+                                                                    <form action="" method="post">
+                                                                        {% csrf_token %}
+                                                                        <input type="hidden" name="classroomcourse_id" value="{{course.id}}">
+                                                                        <input type="submit" class="blog_btn" name="classroomcourse_submit" value="View More">
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </article>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-9">
-                                                <div class="blog_post">
-                                                    <div class="">
-                                                        {{course.image | safe}}
-                                                    </div>
-                                                    <div class="blog_details">
-                                                        <h2>{{course.title}}</h2>
-                                                        <p>{{course.description | safe | slice:":300"}} ...</p>
-                                                        <form action="" method="post">
-                                                            {% csrf_token %}
-                                                            <input type="hidden" name="classroomcourse_id" value="{{course.id}}">
-                                                            <input type="submit" class="blog_btn" name="classroomcourse_submit" value="View More">
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>                
-                                </div>
-                            {% endfor %}
-                            <br>
-                        </div>
-                      </div>
+                                            {% endfor %}
+                                        </div>
+                                    {% endfor %}
+                                {% endfor %}
+                            </div>
+                        </div> 
                     </div>
                 </div>
+                <br>
             {% endfor %}
         </div>
         <br>
+        <!-- TODO: To be deleted -->
+        <!-- {% if forloop.first %}
+            <div id="collapse{{forloop.counter}}" class="collapse show" aria-labelledby="heading{{forloop.counter}}" data-parent="#accordionExample">
+            {% else %}
+            <div id="collapse{{forloop.counter}}" class="collapse" aria-labelledby="heading{{forloop.counter}}" data-parent="#accordionExample">
+                    {% endif %}
+                <div class="card-body">
+                        {% for course in courses %}
+                        <div class="container">    
+                            <article class="row blog_item">
+                                    <div class="col-md-3">
+                                        <div class="blog_info text-right">
+                                            <div class="post_tag">
+                                                <a class="active" href="#">{{course.category}}</a>
+                                            </div>
+                                            <ul class="blog_meta list">
+                                                <li><a href="#">{{course.instructor}}<i class="ti-user"></i></a></li>
+                                                <li><a href="#"><i class="price">${{course.price}}</i></a></li>
+                                                 <li><a href="#">1.2M Views<i class="ti-eye"></i></a></li>
+                                                <li><a href="#">06 Comments<i class="ti-comment"></i></a></li> 
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="blog_post">
+                                            <div class="">
+                                                {{course.image | safe}}
+                                            </div>
+                                            <div class="blog_details">
+                                                <h2>{{course.title}}</h2>
+                                                <p>{{course.description | safe | slice:":300"}} ...</p>
+                                                <form action="" method="post">
+                                                    {% csrf_token %}
+                                                    <input type="hidden" name="classroomcourse_id" value="{{course.id}}">
+                                                    <input type="submit" class="blog_btn" name="classroomcourse_submit" value="View More">
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>                
+                        </div>
+                    {% endfor %}
+                    <br>
+                </div>
+            </div>
+            </div>
+        </div> -->
+        <!--  -->
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
@@ -210,9 +260,6 @@
         <script src="{% static 'js/owl-carousel-thumb.min.js' %}"></script>
         <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
         <script src="{% static 'js/mail-script.js' %}"></script>
-        <!--gmaps Js-->
-        <script src=https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
-        <script src="{% static 'js/gmaps.min.js' %}"></script>
         <script src="{% static 'js/theme.js' %}"></script>
     </body>
 </html>

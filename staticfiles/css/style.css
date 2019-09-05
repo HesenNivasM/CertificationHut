@@ -1562,9 +1562,6 @@ button:focus {
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
 /*============== contact_area css ================*/
-.mapBox {
-  height: 420px;
-  margin-bottom: 80px; }
 
 .contact_info .info_item {
   position: relative;
@@ -3343,5 +3340,3 @@ h6 {
           margin-top: 20px; } }
 
 /*---------------------------------------------------- */
-
-/*# sourceMappingURL=style.css.map */

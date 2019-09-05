@@ -34,9 +34,26 @@ def classroomcourses_index(request):
         category_dict[category] = []
     for classroomcourse in classroomcourses:
         category_dict[classroomcourse.category].append(classroomcourse)
+
+    # Get unique continent as the key
+    continents = set()
+    for classroomcourse in classroomcourses:
+        continents.add(classroomcourse.continent)
+    # Initialize a dict with the key as those continents
+    continents_dict = {}
+    for continent in continents:
+        continents_dict[continent] = []
+    print(category_dict)
+    # Get the list from category dict and find if the keys are in the correct continent and append the list to the continent list
+    for key, value in category_dict.items():
+        temp_course_data = Course.objects.filter(course_type = 1, category = str(key))[0]
+        continents_dict[temp_course_data.continent].append({key: value})
+
+    print(continents_dict)
+
     return render(request, "courses/classroomcourses/index.html", {
         "categories": categories,
-        "category_dict": category_dict,
+        "continents_dict": continents_dict,
     })
 
 

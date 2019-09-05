@@ -11,6 +11,7 @@ class Course(models.Model):
         (2, "Live Online Courses")
     ])
     image = RichTextUploadingField()
+    continent = models.CharField(max_length=1000, blank = True)
     category = models.CharField(max_length=1000)
     price = models.IntegerField()
     description = RichTextUploadingField()
